@@ -1,0 +1,160 @@
+#set($validateClassName=$name.getValidateClassName($table))
+#set($messageClass=$name.getMessageClassName($table))
+#set($messageVar=$name.getMessageVarName($table))
+#set($messageReqClass=$name.getMessageReqClassName($table))
+#set($messageReqVarName=$name.getMessageReqVarName($table))
+#set($modelClass=$name.getModelClassName($table))
+#set($modelVar=$name.getModelVarName($table))
+#set($bizClass=$name.getBizClassName($table))
+#set($bizVar=$name.getBizVarName($table))
+#set($convertor=$name.getConvertorClassName($table))
+#set($primaryKeyVarName=$code.getVarName($table.primaryKey.memberColumns[0].propertyName))
+#set($primaryKeyParameter=$code.getParameters($table.primaryKey.memberColumns))
+#set($messageQueryClass=$name.getMessageQueryClassName($table))
+#set($messageQueryVar=$name.getMessageQueryVarName($table))
+#set($modelQueryClass=$name.getModelQueryClassName($table))
+#set($modelQueryVar=$name.getModelQueryVarName($table))
+#set($exceptionClass=$name.getExceptionClassName($table))
+#set($comment=$name.getTableComment($table))
+package ${config.getProperty("basePackage")}.service;
+
+import ${name.getFullBizClassName($table)};
+import ${name.getFullConvertorClassName($table)};
+import ${name.getFullModelClassName($table)};
+import ${name.getFullMessageReqClassName($table)};
+import ${name.getFullMessageQueryClassName($table)};
+import ${name.getFullMessageClassName($table)};
+import ${config.getProperty("basePackage")}.resp.base.QueryResultODTO;
+import ${name.getFullProjectResultClassName()};
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import static ${config.getProperty("basePackage")}.validate.${validateClassName}.validateForCreate;
+import static ${config.getProperty("basePackage")}.validate.${validateClassName}.validateForUpdate;
+
+/**
+ * @CopyRright (c)2008-2017: <${companyname}>
+ * @Project: <${config.getProperty("project.abbreviation")}>
+ * @Comments: <Dubbo Service ${comment}管理类>
+ * @JDK 1.7
+ * @Author: <${config.getProperty("project.Author")}>
+ * @email : <${config.getProperty("project.email")}>
+ * @Create Date: <${nowtime}>
+ * @Modify Date: <${nowtime}>
+ * @Version: <1.0>
+ */
+@Service("$name.getServiceVarName($table)")
+public class $name.getServiceImplClassName($table) implements $name.getServiceClassName($table) {
+	private final Logger logger = LoggerFactory.getLogger(${name.getServiceImplClassName($table)}.class);
+
+	@Autowired
+	private $bizClass $bizVar;
+	
+	/**
+	 * 
+	 * 删除${comment}
+	 * 
+	 * @Author: <${config.getProperty("project.email")}>
+	 * @Version: <1.0>
+	 * @param id
+	 * @param updateUser
+	 * @param updateUserName
+	 * @return
+	 */
+	@Override
+	public ${name.getProjectResultClassName()}<Integer> delete$modelClass($primaryKeyParameter #if($table.hasDeleteColumn()), String updateUser, String updateUserName #end){
+		${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
+		result.setDataMap(${bizVar}.delete$modelClass($primaryKeyVarName #if($table.hasDeleteColumn()), updateUser, updateUserName #end));
+		return result;
+	}
+	
+	/**
+	 * 
+	 * 创建${comment}
+	 * 
+	 * @Author: <${config.getProperty("project.email")}>
+	 * @Version: <1.0>
+	 * @param $messageReqVarName
+	 * @return
+	 */
+	@Override
+    public ${name.getProjectResultClassName()}<${table.primaryColumn.javaType}> create$modelClass($messageReqClass $messageReqVarName){
+		${name.getProjectResultClassName()}<${table.primaryColumn.javaType}> result = ${name.getProjectResultClassName()}.newSuccess();
+		$modelClass $modelVar = ${convertor}.to${modelClass}($messageReqVarName);
+		if (!validateForCreate($modelVar, result)) {
+			return result;
+		}
+		result.setDataMap(${bizVar}.create$modelClass( $modelVar ));
+		return  result;
+	}
+
+	@Override
+	public ${name.getProjectResultClassName()}<Integer> batchCreate(List<${messageReqClass}> ${messageReqVarName}s ) {
+			${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
+		List<${modelClass}> items = ${modelClass}Convertor.to${modelClass}List(${messageReqVarName}s);
+        result.setDataMap(${bizVar}.batchCreate${modelClass}(items));
+        return result;
+	}
+
+	/**
+	 * 
+	 * 更新${comment}
+	 * 
+	 * @Author: <${config.getProperty("project.email")}>
+	 * @Version: <1.0>
+	 * @param $messageReqVarName
+	 * @return
+	 */
+	@Override
+	public ${name.getProjectResultClassName()}<Integer> update$modelClass($messageReqClass $messageReqVarName){
+		${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
+    	$modelClass $modelVar = null;
+		$modelVar = ${convertor}.to${modelClass}($messageReqVarName);
+		if (!validateForUpdate($modelVar, result)) {
+			return result;
+		}
+		result.setDataMap(${bizVar}.update$modelClass( $modelVar ));
+		return result;
+	}
+	
+	/**
+	 * 
+	 * 根据ID获取${comment}信息
+	 * 
+	 * @Author: <${config.getProperty("project.email")}>
+	 * @Version: <1.0>
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public ${name.getProjectResultClassName()}<$messageClass> get$modelClass( $primaryKeyParameter ){
+		${name.getProjectResultClassName()}<$messageClass> result  = ${name.getProjectResultClassName()}.newSuccess();
+		$modelClass $modelVar = ${bizVar}.get$modelClass( $primaryKeyVarName );
+		$messageClass $messageVar = ${convertor}.to${messageClass}($modelVar);
+		result.setDataMap($messageVar);
+		return result;
+	}
+
+	/**
+	 * 
+	 * 分页查询${comment}信息
+	 * 
+	 * @Author: <${config.getProperty("project.email")}>
+	 * @Version: <1.0>
+	 * @param $messageQueryVar
+	 * @return
+	 */
+	@Override
+	public ${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> query${modelClass}($messageQueryClass $messageQueryVar) {
+		${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> result = ${name.getProjectResultClassName()}.newSuccess();
+
+		QueryResultODTO<${modelClass}> resultInfo = ${bizVar}.query${modelClass}(${messageQueryVar});
+        result.setDataMap(${convertor}.toQueryResult(resultInfo));
+
+		return result;
+	}
+}

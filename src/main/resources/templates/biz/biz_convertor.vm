@@ -1,0 +1,85 @@
+#set($messageClass=$name.getMessageClassName($table))
+#set($messageVar=$name.getMessageVarName($table))
+#set($messageReqClass=$name.getMessageReqClassName($table))
+#set($messageReqVarName=$name.getMessageReqVarName($table))
+#set($modelClass=$name.getModelClassName($table))
+#set($modelVar=$name.getModelVarName($table))
+#set($messageQueryClass=$name.getMessageQueryClassName($table))
+#set($messageQueryVar=$name.getMessageQueryVarName($table))
+#set($modelQueryClass=$name.getModelQueryClassName($table))
+#set($modelQueryVar=$name.getModelQueryVarName($table))
+#set($comment=$name.getTableComment($table))
+package ${config.getProperty("basePackage")}.biz.convertor;
+
+import $name.getFullModelClassName($table);
+import $name.getFullMessageReqClassName($table);
+import $name.getFullMessageClassName($table);
+import ${config.getProperty("basePackage")}.resp.base.QueryResultODTO;
+import org.springframework.cglib.beans.BeanCopier;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @CopyRright (c)2008-2017: <${companyname}>
+ * @Project: <${config.getProperty("project.abbreviation")}>
+ * @Comments: <Dubbo层${comment}转换类 Dubbo层的Info对象与dal层的model对象相互转换>
+ * @JDK 1.7
+ * @Author: <${config.getProperty("project.Author")}>
+ * @email : <${config.getProperty("project.email")}>
+ * @Create Date: <${nowtime}>
+ * @Modify Date: <${nowtime}>
+ * @Version: <1.0>
+ */
+public abstract class ${name.getConvertorClassName($table)} {
+
+	private static final BeanCopier beanCopierFor${messageClass} = BeanCopier.create(${modelClass}.class, ${messageClass}.class, false);
+	private static final BeanCopier beanCopierFor${modelClass} = BeanCopier.create(${messageReqClass}.class, ${modelClass}.class, false);
+
+	public static ${messageClass} to${messageClass}(${modelClass} ${modelVar}) {
+		if (${modelVar} == null) {
+			return null;
+		}
+		${messageClass} ${messageVar} = new ${messageClass}();
+		beanCopierFor${messageClass}.copy(${modelVar}, ${messageVar}, null);
+		return ${messageVar};
+	}
+
+	public static ${modelClass} to${modelClass}(${messageReqClass} ${messageReqVarName}) {
+		${modelClass} ${modelVar} = new ${modelClass}();
+		beanCopierFor${modelClass}.copy(${messageReqVarName}, ${modelVar}, null);
+		return ${modelVar};
+	}
+
+	public static List<${messageClass}> to${messageClass}List(List<${modelClass}> ${modelVar}List) {
+		if (${modelVar}List == null || ${modelVar}List.isEmpty()) {
+			return null;
+		}
+		List<${messageClass}> ${modelVar}InfoList = new ArrayList<${messageClass}>(${modelVar}List.size());
+		for (${modelClass} ${modelVar} : ${modelVar}List) {
+			${modelVar}InfoList.add(to${messageClass}(${modelVar}));
+		}
+		return ${modelVar}InfoList;
+	}
+
+	public static List<${modelClass}> to${modelClass}List(List<${messageReqClass}> ${messageReqVarName}List) {
+		if (${messageReqVarName}List == null || ${messageReqVarName}List.isEmpty()) {
+			return null;
+		}
+		List<${modelClass}> ${modelVar}List = new ArrayList<${modelClass}>(${messageReqVarName}List.size());
+		for (${messageReqClass} ${messageReqVarName} : ${messageReqVarName}List) {
+			${modelVar}List.add(to${modelClass}(${messageReqVarName}));
+		}
+		return ${modelVar}List;
+	}
+
+    public static QueryResultODTO<${messageClass}> toQueryResult(QueryResultODTO<${modelClass}> queryResult) {
+    	QueryResultODTO<${messageClass}> queryResultInfo = new QueryResultODTO<${messageClass}>();
+        queryResultInfo.setPageNo(queryResult.getPageNo());
+        queryResultInfo.setPageSize(queryResult.getPageSize());
+        queryResultInfo.setTotalPages(queryResult.getTotalPages());
+        queryResultInfo.setTotalRecords(queryResult.getTotalRecords());
+        queryResultInfo.setRecords(to${messageClass}List(queryResult.getRecords()));
+        return queryResultInfo;
+        }
+}

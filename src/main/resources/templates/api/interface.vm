@@ -1,0 +1,121 @@
+package ${config.getProperty("basePackage")}.service;
+#set($messageClass=$name.getMessageClassName($table))
+#set($messageReqClass=$name.getMessageReqClassName($table))
+#set($messageReqVarName=$name.getMessageReqVarName($table))
+#set($modelClass=$name.getModelClassName($table))
+#set($messageVarName=$name.getMessageVarName($table))
+#set($bizClass=$name.getBizClassName($table))
+#set($primaryKeyVarName=$code.getVarName($table.primaryKey.memberColumns[0].propertyName))
+#set($primaryKeyParameter=$code.getParameters($table.primaryKey.memberColumns))
+#set($messageQueryClass=$name.getMessageQueryClassName($table))
+#set($messageQueryVar=$name.getMessageQueryVarName($table))
+#set($modelQueryClass=$name.getModelQueryClassName($table))
+#set($modelQueryVar=$name.getModelQueryVarName($table))
+#set($comment=$name.getTableComment($table))
+
+import ${name.getFullMessageReqClassName($table)};
+import ${name.getFullMessageQueryClassName($table)};
+import ${name.getFullMessageClassName($table)};
+import ${config.getProperty("basePackage")}.resp.base.QueryResultODTO;
+import ${name.getFullProjectResultClassName()};
+
+import java.util.List;
+
+/**
+ * @CopyRright (c)2008-2017: <${companyname}>
+ * @Project: <${config.getProperty("project.abbreviation")}>
+ * @Comments: <对外API ${comment}管理接口>
+ * @JDK 1.7
+ * @Author: <${config.getProperty("project.Author")}>
+ * @email : <${config.getProperty("project.email")}>
+ * @Create Date: <${nowtime}>
+ * @Modify Date: <${nowtime}>
+ * @Version: <1.0>
+ */
+public interface ${name.getServiceClassName($table)} {
+
+#if($table.hasDeleteColumn())
+	/**
+	 * 
+	 * 删除${comment}
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param id
+	 * @param updateUser
+	 * @param updateUserName
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<Integer> delete$modelClass($primaryKeyParameter, String updateUser, String updateUserName);
+#else
+	/**
+	 * 
+	 * 删除${comment}
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param primaryKeyParameter
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<Integer> delete$modelClass($primaryKeyParameter);
+#end
+	
+	/**
+	 * 
+	 * 创建${comment}
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param $messageReqVarName
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<${table.primaryColumn.javaType}> create$modelClass($messageReqClass $messageReqVarName);
+
+	/**
+	 *
+	 * 批量创建${comment}
+	 *
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param ${messageReqVarName}s
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<Integer> batchCreate(List<$messageReqClass> ${messageReqVarName}s);
+
+	/**
+	 * 
+	 * 更新${comment}
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param $messageReqVarName
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<Integer> update$modelClass($messageReqClass $messageReqVarName);
+	
+	/**
+	 * 
+	 * 根据ID获取${comment}信息
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param id
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<$messageClass> get$modelClass( $primaryKeyParameter );
+
+	/**
+	 * 
+	 * 分页查询${comment}信息
+	 * 
+	 * @author ${config.getProperty("project.Author")}
+	 * @version 1.0.0
+	 * @param ${messageQueryVar}
+	 * @return
+	 */
+	${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> query${modelClass}($messageQueryClass $messageQueryVar);
+
+    /**
+    * The following custom service interface about dubbo
+    */
+}

@@ -36,7 +36,7 @@
             如果精度=0并且5<=长度<=9，就会使用java.lang.Integer
             如果精度=0并且长度<5，就会使用java.lang.Short
             -->
-            <property name="forceBigDecimals" value="false"/>
+            <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
@@ -88,7 +88,7 @@
         <!-- table config end  -->
 
 
-        <table tableName="wm_machine_wine" domainObjectName="MachineWine"
+        <table tableName="wm_user_server" domainObjectName="UserServer"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"

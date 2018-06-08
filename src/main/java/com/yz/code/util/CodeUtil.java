@@ -57,7 +57,7 @@ public class CodeUtil {
         return sb.toString();
     }
 
-    public static String getFilePathOfMyBatisGenerator(String fileName) {
+    /*public static String getFilePathOfMyBatisGenerator(String fileName) {
         StringBuilder sb = new StringBuilder(20);
         String basePackageString = ConfigManager.getProperty("basePackage");
         String generatorPackage = ConfigManager.getProperty("output.generator.project");
@@ -70,6 +70,21 @@ public class CodeUtil {
             sb.append(s).append("\\");
         }
         sb.append(fileName).append("\\");
+        return sb.toString();
+    }*/
+    public static String getFilePathOfMyBatisGenerator(String fileName) {
+        StringBuilder sb = new StringBuilder(20);
+        String basePackageString = ConfigManager.getProperty("basePackage");
+        String generatorPackage = ConfigManager.getProperty("output.generator.project");
+        sb.append(generatorPackage);
+        if (!generatorPackage.endsWith("/")) {
+            sb.append("/");
+        }
+        String[] split = basePackageString.split("\\.");
+        for (String s : split) {
+            sb.append(s).append("/");
+        }
+        sb.append(fileName).append("/");
         return sb.toString();
     }
 }

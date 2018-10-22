@@ -61,15 +61,7 @@
 
         <!-- table config start -->
 
-        <!--<table tableName="mmc_promotion_related" domainObjectName="PromotionRelated"-->
-               <!--enableCountByExample="true" enableUpdateByExample="true"-->
-               <!--enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableInsert="true"-->
-               <!--enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">-->
-            <!--<generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>-->
-        <!--</table>-->
-
-<!--        <table tableName="lds_prize_record" domainObjectName="PrizeRecord"
+        <table tableName="mmc_promotion_related" domainObjectName="PromotionRelated"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -77,31 +69,7 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
-        <table tableName="lds_user_participation" domainObjectName="UserParticipation"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>-->
-
-        <!-- table config end  -->
-
-        <table tableName="wm_brand" domainObjectName="Brand"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_drop" domainObjectName="Drop"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_machine" domainObjectName="Machine"
+        <table tableName="mmc_user_coupon_verify" domainObjectName="UserCouponVerify"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -109,77 +77,8 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
-        <table tableName="wm_machine_bind_log" domainObjectName="MachineBindLog"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_order" domainObjectName="Order"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_order_log" domainObjectName="OrderLog"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_product" domainObjectName="Product"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_product_media" domainObjectName="ProductMedia"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_seller_account" domainObjectName="SellerAccount"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_seller_account_log" domainObjectName="SellerAccountLog"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_sku" domainObjectName="Sku"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="wm_user_server" domainObjectName="UserServer"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
+        <!-- table config end  -->
 
-        <table tableName="wm_seller_repertory" domainObjectName="SellerRepertory"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
 
 
         <!--<table tableName="aps_activity_audit_log" domainObjectName="ActivityAuditLog"-->

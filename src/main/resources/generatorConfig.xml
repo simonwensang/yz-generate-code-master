@@ -108,6 +108,20 @@
                enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
+        <table tableName="wm_machine_batch_apply" domainObjectName="MachineBatchApply"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+        <table tableName="wm_machine_device" domainObjectName="MachineDevice"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
 
         <table tableName="wm_machine_bind_log" domainObjectName="MachineBindLog"
                enableCountByExample="true" enableUpdateByExample="true"
@@ -181,6 +195,20 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
+        <table tableName="wm_push_log" domainObjectName="PushLog"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+        <table tableName="wm_receive_message_log" domainObjectName="ReceiveMessageLog"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
 
         <!--<table tableName="aps_activity_audit_log" domainObjectName="ActivityAuditLog"-->
                <!--enableCountByExample="true" enableUpdateByExample="true"-->

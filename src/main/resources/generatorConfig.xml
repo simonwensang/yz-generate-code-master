@@ -61,7 +61,7 @@
 
         <!-- table config start -->
 
-        <table tableName="mmc_promotion_related" domainObjectName="PromotionRelated"
+        <table tableName="ats_template" domainObjectName="Template"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -69,7 +69,7 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
-        <table tableName="mmc_user_coupon_verify" domainObjectName="UserCouponVerify"
+        <table tableName="ats_template_apply_info" domainObjectName="TemplateApplyInfo"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -77,6 +77,13 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
+        <table tableName="ats_template_online_log" domainObjectName="TemplateOnlineLog"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
         <!-- table config end  -->
 
 

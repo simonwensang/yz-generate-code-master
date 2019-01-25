@@ -62,7 +62,7 @@ public class ${modelClass}Controller extends BaseController {
 			@ApiResponse(code = 402, message = "没有此操作权限"),
 			 })
 	@ApiOperation(value = "delete${modelClass}", notes = "删除${comment}")
-	@RequestMapping(value = "delete${modelClass}", method = { RequestMethod.POST })
+	@RequestMapping(value = "delete${modelClass}", method = { RequestMethod.POST,RequestMethod.GET })
 	public ${name.getProjectResultClassName()}<Integer> delete${modelClass}(Long id, String updateUser, String updateUserName) {
 		${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {
@@ -156,7 +156,7 @@ public class ${modelClass}Controller extends BaseController {
 			@ApiResponse(code = 402, message = "没有此操作权限"),
 			 })
 	@ApiOperation(value = "query${modelClass}", notes = "分页获取${comment}列表信息")
-	@RequestMapping(value = "query${modelClass}", method = { RequestMethod.GET })
+	@RequestMapping(value = "query${modelClass}", method = { RequestMethod.POST })
 	${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> query${modelClass}(@Valid @RequestBody ${controllerQueryVoClassName} ${controllerQueryVoVar}){
 		${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {

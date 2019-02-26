@@ -44,7 +44,7 @@ public class $bizClass {
 	private final Logger logger = LoggerFactory.getLogger(${bizClass}.class);
 
 	@Autowired
-	$mapperClass ${mapperVarName};
+    private $mapperClass ${mapperVarName};
 
 #if($table.hasDeleteColumn())
 	/**

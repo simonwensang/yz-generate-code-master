@@ -61,7 +61,7 @@
 
         <!-- table config start -->
 
-        <table tableName="isps_activity" domainObjectName="Activity"
+        <table tableName="mmc_promotion_audit_log" domainObjectName="PromotionAuditLog"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -69,28 +69,7 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
-        <table tableName="isps_activity_retweet" domainObjectName="ActivityRetweet"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
 
-        <table tableName="isps_user_coupon" domainObjectName="UserCoupon"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="isps_activity_issued" domainObjectName="ActivityIssued"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
         <!-- table config end  -->
 
 

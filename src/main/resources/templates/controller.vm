@@ -9,7 +9,7 @@
 #set($modelQueryClass=$name.getModelQueryClassName($table))
 #set($modelQueryVar=$name.getModelQueryVarName($table))
 #set($serviceVar=$name.getServiceVarName($table))
-package ${config.getProperty("basePackage")}.admin.controller;
+package ${config.getProperty("basePackage")}.admin.controller.ssc;
 
 import java.util.HashMap;
 import java.util.List;

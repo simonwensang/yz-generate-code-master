@@ -16,7 +16,7 @@
 #set($serviceVar=$name.getServiceVarName($table))
 #set($serviceClass=$name.getServiceClassName($table))
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.test;
+package ${config.getProperty("basePackage")}.test.ssc;
 
 import ${name.getFullMessageReqClassName($table)};
 import ${name.getFullMessageQueryClassName($table)};

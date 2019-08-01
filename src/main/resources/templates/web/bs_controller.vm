@@ -21,7 +21,7 @@
 #set($controllerQueryVoClassName=${name.getControllerQueryVoClassName($table)})
 #set($controllerQueryVoVar=${name.getControllerQueryVoVar($table)})
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.controller;
+package ${config.getProperty("basePackage")}.controller.ssc;
 
 import ${controllerConvertorClassName};
 import ${name.getFullMessageReqClassName($table)};

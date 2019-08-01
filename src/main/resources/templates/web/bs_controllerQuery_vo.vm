@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.vo;
+package ${config.getProperty("basePackage")}.vo.ssc;
 
 import ${config.getProperty("basePackage")}.vo.base.QueryVO;
 

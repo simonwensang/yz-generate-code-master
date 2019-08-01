@@ -7,7 +7,6 @@
 	<update id="logicalDeleteByPrimaryKey">
 		UPDATE $table.tableName
 		SET
-    		update_time = #{updateTime,jdbcType=TIMESTAMP},
     		update_user = #{updateUser,jdbcType=VARCHAR},
 			update_user_name = #{updateUserName,jdbcType=VARCHAR},
             is_deleted=1

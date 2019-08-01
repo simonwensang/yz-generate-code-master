@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.constant;
+package ${config.getProperty("basePackage")}.constant.ssc;
 
 /**
  * @CopyRright (c)2008-2017: <${companyname} >

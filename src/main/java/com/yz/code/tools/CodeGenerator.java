@@ -486,7 +486,7 @@ static  class OOMOBject{
         String contextBase = null;
         String interception = null;
         try {
-            fileNameDaoBase = CodeUtil.getFilePathOfMyBatisGenerator(ConfigManager.getProperty("output.mapper.package")) + NameUtil.getMapperClassName(tableSchema) + ".java";
+            fileNameDaoBase = CodeUtil.getFilePathOfMyBatisGenerator(ConfigManager.getProperty("output.mapper.package.ssc")) + NameUtil.getMapperClassName(tableSchema) + ".java";
             contextBase = FileUtil.readStringUseNio(fileNameDaoBase);
             int beginIndex = contextBase.indexOf('{') + 1;
             int endIndex = contextBase.indexOf('}');
@@ -626,7 +626,7 @@ static  class OOMOBject{
         String context = null;
         String outPutJavaFile = outputRootDir + ConfigManager.getProperty("package.name.model") + "/" + NameUtil.getModelClassName(tableSchema) + "Example.java";
         try {
-            xxExamplePath = CodeUtil.getFilePathOfMyBatisGenerator(ConfigManager.getProperty("output.model.package")) + NameUtil.getModelClassName(tableSchema) + "Example.java";
+            xxExamplePath = CodeUtil.getFilePathOfMyBatisGenerator(ConfigManager.getProperty("output.model.package.ssc")) + NameUtil.getModelClassName(tableSchema) + "Example.java";
             context = FileUtil.readStringUseNio(xxExamplePath);
             FileUtil.writeUseBio(outPutJavaFile, context);
         } catch (Exception e) {

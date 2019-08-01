@@ -1,5 +1,5 @@
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.vo;
+package ${config.getProperty("basePackage")}.vo.ssc;
 
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;

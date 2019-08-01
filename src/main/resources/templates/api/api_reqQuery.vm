@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.req;
+package ${config.getProperty("basePackage")}.req.ssc;
 
 import ${config.getProperty("basePackage")}.req.base.QueryDTO;
 

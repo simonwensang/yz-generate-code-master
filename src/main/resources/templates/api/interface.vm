@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.service;
+package ${config.getProperty("basePackage")}.service.ssc;
 #set($messageClass=$name.getMessageClassName($table))
 #set($messageReqClass=$name.getMessageReqClassName($table))
 #set($messageReqVarName=$name.getMessageReqVarName($table))

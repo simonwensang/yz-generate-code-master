@@ -91,6 +91,118 @@
                enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
+
+        <table tableName="ssc_user_group_booking" domainObjectName="SscUserGroupBooking"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_element" domainObjectName="SscElement"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_join_element" domainObjectName="SscJoinElement"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_lucky_draw_notice_templete" domainObjectName="SscLuckyDrawNoticeTemplete"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_user_coupon_message_record" domainObjectName="SscUserCouponMessageRecord"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_sub_activity" domainObjectName="SscSubActivity"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_pre_order_scene" domainObjectName="SscPreOrderScene"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_pre_order_scene_item" domainObjectName="SscPreOrderSceneItem"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_user_pre_order" domainObjectName="SscUserPreOrder"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_assist" domainObjectName="SscAssist"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_assist_prize" domainObjectName="SscAssistPrize"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_user_assist" domainObjectName="SscUserAssist"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_user_assist_prize" domainObjectName="SscUserAssistPrize"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
+
+        <table tableName="ssc_issued_mall" domainObjectName="SscIssuedMall"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableInsert="true"
+               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
+        </table>
         <!-- table config end  -->
 
 

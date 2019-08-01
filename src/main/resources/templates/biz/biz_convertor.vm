@@ -9,7 +9,7 @@
 #set($modelQueryClass=$name.getModelQueryClassName($table))
 #set($modelQueryVar=$name.getModelQueryVarName($table))
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.biz.convertor;
+package ${config.getProperty("basePackage")}.biz.convertor.ssc;
 
 import $name.getFullModelClassName($table);
 import $name.getFullMessageReqClassName($table);

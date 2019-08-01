@@ -33,13 +33,13 @@ public class NameUtil {
 
     public static String getFullMapperClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".dao."
+                + ".dao.ssc."
                 + getMapperClassName(tableSchema);
     }
 
     public static String getFullExceptionClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".biz.exception."
+                + ".biz.exception.ssc."
                 + getExceptionClassName(tableSchema);
     }
 
@@ -53,7 +53,7 @@ public class NameUtil {
 
     public static String getFullModelClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".model."
+                + ".model.ssc."
                 + getModelClassName(tableSchema);
     }
 
@@ -63,13 +63,13 @@ public class NameUtil {
 
     public static String getFullControllerVoClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".vo."
+                + ".vo.ssc."
                 + getControllerVoClassName(tableSchema);
     }
 
     public static String getFullControllerQueryVoClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".vo."
+                + ".vo.ssc."
                 + getControllerQueryVoClassName(tableSchema);
     }
 
@@ -83,7 +83,7 @@ public class NameUtil {
 
     public static String getFullModelQueryClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".model."
+                + ".model.ssc."
                 + getModelQueryClassName(tableSchema);
     }
 
@@ -97,13 +97,13 @@ public class NameUtil {
 
     public static String getFullConvertorClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".biz.convertor."
+                + ".biz.convertor.ssc."
                 + getConvertorClassName(tableSchema);
     }
 
     public static String getFullControllerConvertorClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".convertor."
+                + ".convertor.ssc."
                 + getConvertorClassName(tableSchema);
     }
 
@@ -125,7 +125,7 @@ public class NameUtil {
 
     public static String getFullMessageQueryClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".req."
+                + ".req.ssc."
                 + getMessageQueryClassName(tableSchema);
     }
 
@@ -139,7 +139,7 @@ public class NameUtil {
 
     public static String getFullBizClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".biz."
+                + ".biz.ssc."
                 + getBizClassName(tableSchema);
     }
 
@@ -153,7 +153,7 @@ public class NameUtil {
 
     public static String getFullMessageReqClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".req."
+                + ".req.ssc."
                 + getMessageReqClassName(tableSchema);
     }
 
@@ -167,7 +167,7 @@ public class NameUtil {
 
     public static String getFullMessageClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".resp."
+                + ".resp.ssc."
                 + getMessageClassName(tableSchema);
     }
 
@@ -183,7 +183,7 @@ public class NameUtil {
 
     public static String getFullServiceClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".service."
+                + ".service.ssc."
                 + getServiceClassName(tableSchema);
     }
 
@@ -195,7 +195,7 @@ public class NameUtil {
 
     public static String getFullServiceImplClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".service.impl."
+                + ".service.impl.ssc."
                 + getServiceImplClassName(tableSchema);
     }
 
@@ -225,7 +225,7 @@ public class NameUtil {
 
     public static String getFullControllerClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".service.controller."
+                + ".service.controller.ssc."
                 + getControllerClassName(tableSchema);
     }
 
@@ -240,7 +240,7 @@ public class NameUtil {
 
     public static String getFullTestClassName(TableSchema tableSchema) {
         return ConfigManager.getProperty("basePackage")
-                + ".service.test."
+                + ".service.test.ssc."
                 + getTestClassName(tableSchema);
     }
 

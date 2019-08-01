@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.dao;
+package ${config.getProperty("basePackage")}.dao.ssc;
 #set($mapperClass=$name.getMapperClassName($table))
 #set($modelClass=$name.getModelClassName($table))
 #set($modelVar=$name.getModelVarName($table))
@@ -22,8 +22,7 @@ public interface $mapperClass {
     int logicalDeleteByPrimaryKey(
         		@Param("$table.primaryColumn.propertyName")$table.primaryColumn.javaType $table.primaryColumn.propertyName,
         		@Param("updateUser")String updateUser,
-				@Param("updateUserName")String updateUserName,
-				@Param("updateTime")Date updateTime);
+				@Param("updateUserName")String updateUserName);
 #end
 
     $table.modelName selectByPrimaryKeyForUpdate($keyParameters);

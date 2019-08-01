@@ -16,7 +16,7 @@
 #set($modelQueryVar=$name.getModelQueryVarName($table))
 #set($exceptionClass=$name.getExceptionClassName($table))
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.service;
+package ${config.getProperty("basePackage")}.service.ssc;
 
 import ${name.getFullBizClassName($table)};
 import ${name.getFullConvertorClassName($table)};

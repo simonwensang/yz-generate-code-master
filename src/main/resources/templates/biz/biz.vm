@@ -9,7 +9,7 @@
 #set($modelQueryVar=$name.getModelQueryVarName($table))
 #set($mapperVarName=$name.getMapperVarName($table))
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.biz;
+package ${config.getProperty("basePackage")}.biz.ssc;
 
 import ${name.getFullMapperClassName($table)};
 import ${name.getFullModelClassName($table)};

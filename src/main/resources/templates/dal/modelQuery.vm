@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.model;
+package ${config.getProperty("basePackage")}.model.ssc;
 
 import java.math.BigDecimal;
 import java.util.Date;

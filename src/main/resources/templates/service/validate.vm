@@ -1,7 +1,7 @@
 #set($modelClass=$name.getModelClassName($table))
 #set($modelVar=$name.getModelVarName($table))
 #set($validateClass=$name.getValidateClassName($table))
-package ${config.getProperty("basePackage")}.validate;
+package ${config.getProperty("basePackage")}.validate.ssc;
 
 import $name.getFullModelClassName($table);
 import ${name.getFullProjectResultClassName()};

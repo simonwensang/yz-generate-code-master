@@ -1,4 +1,4 @@
-package ${config.getProperty("basePackage")}.model;
+package ${config.getProperty("basePackage")}.model.ssc;
 
 #if($table.hasBigDecimalColumn())
 import java.math.BigDecimal;

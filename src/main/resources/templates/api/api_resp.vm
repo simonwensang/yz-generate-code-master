@@ -1,5 +1,5 @@
 #set($comment=$name.getTableComment($table))
-package ${config.getProperty("basePackage")}.resp;
+package ${config.getProperty("basePackage")}.resp.ssc;
 
 import java.io.Serializable;
 #if($table.hasBigDecimalColumn())

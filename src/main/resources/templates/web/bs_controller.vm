@@ -33,8 +33,6 @@ import ${name.getFullProjectResultCodeClassName()};
 import ${config.getProperty("basePackage")}.service.${serviceClass};
 import ${config.getProperty("basePackage")}.vo.${name.getControllerQueryVoClassName($table)};
 import ${config.getProperty("basePackage")}.vo.${name.getControllerVoClassName($table)};
-import com.${config.getProperty("company.abbreviation")}.perseus.utils.ValidationResult;
-import com.${config.getProperty("company.abbreviation")}.perseus.utils.ValidationUtils;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
@@ -63,10 +61,10 @@ public class ${modelClass}Controller extends BaseController {
 			 })
 	@ApiOperation(value = "delete${modelClass}", notes = "删除${comment}")
 	@RequestMapping(value = "delete${modelClass}", method = { RequestMethod.POST,RequestMethod.GET })
-	public ${name.getProjectResultClassName()}<Integer> delete${modelClass}(Long id, String updateUser, String updateUserName) {
+	public ${name.getProjectResultClassName()}<Integer> delete${modelClass}(Long id) {
 		${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {
-			result = ${serviceVar}.delete${modelClass}(id, updateUser, updateUserName);
+			result = ${serviceVar}.delete${modelClass}(id);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			result.setCode(${name.getProjectResultCodeClassName()}.SYS_ERROR.getCode());
@@ -86,12 +84,6 @@ public class ${modelClass}Controller extends BaseController {
 	public ${name.getProjectResultClassName()}<Long> create${modelClass}(@Valid @RequestBody ${controllerVoClassName} ${controllerVoVar}){
 		${name.getProjectResultClassName()}<Long> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {
-			ValidationResult validateEntity = ValidationUtils.validateEntity(${controllerVoVar});
-			if (validateEntity.isHasErrors() ) {
-				result.setCode(${name.getProjectResultCodeClassName()}.COMMON_PARAM_INVALID.getCode());
-				result.setMessage(validateEntity.getErrorMsg().toString());
-				return result;
-			}
 			${messageReqClass} ${messageReqVarName} = ${convertorClassName}.to${messageReqClass}(${controllerVoVar});
 			result = ${serviceVar}.create${modelClass}(${messageReqVarName});
 		} catch (Exception e) {
@@ -113,12 +105,6 @@ public class ${modelClass}Controller extends BaseController {
 	public ${name.getProjectResultClassName()}<Integer> update${modelClass}(@Valid @RequestBody ${controllerVoClassName} ${controllerVoVar}){
 		${name.getProjectResultClassName()}<Integer> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {
-			ValidationResult validateEntity = ValidationUtils.validateEntity(${controllerVoVar});
-			if (validateEntity.isHasErrors() ) {
-				result.setCode(${name.getProjectResultCodeClassName()}.COMMON_PARAM_INVALID.getCode());
-				result.setMessage(validateEntity.getErrorMsg().toString());
-				return result;
-			}
 			${messageReqClass} ${messageReqVarName} = ${convertorClassName}.to${messageReqClass}(${controllerVoVar});
 			result = ${serviceVar}.update${modelClass}(${messageReqVarName});
 		} catch (Exception e) {
@@ -160,12 +146,6 @@ public class ${modelClass}Controller extends BaseController {
 	${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> query${modelClass}(@Valid @RequestBody ${controllerQueryVoClassName} ${controllerQueryVoVar}){
 		${name.getProjectResultClassName()}<QueryResultODTO<${messageClass}>> result = ${name.getProjectResultClassName()}.newSuccess();
 		try {
-			ValidationResult validateEntity = ValidationUtils.validateEntity(${controllerQueryVoVar});
-			if (validateEntity.isHasErrors() ) {
-				result.setCode(${name.getProjectResultCodeClassName()}.COMMON_PARAM_INVALID.getCode());
-				result.setMessage(validateEntity.getErrorMsg().toString());
-				return result;
-			}
 			${messageQueryClass} ${messageQueryVar} = ${convertorClassName}.to${messageQueryClass}(${controllerQueryVoVar});
 			result = ${serviceVar}.query${modelClass}(${messageQueryVar});
 		} catch (Exception e) {

@@ -106,9 +106,7 @@ public class CodeGenerator {
         }
 
     }
-static  class OOMOBject{
 
-}
     private static void globalVariableSettings() throws Exception {
         outputRootDir = ConfigManager.getProperty("output.root.dir");
         if (outputRootDir == null || !StringUtils.hasText(outputRootDir)) {

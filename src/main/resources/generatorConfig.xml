@@ -87,35 +87,7 @@
 
         <!-- table config end  -->
 
-        <table tableName="dv_app_version" domainObjectName="AppVersion"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_divine" domainObjectName="Divine"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_divine_item" domainObjectName="DivineItem"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_divine_item_type" domainObjectName="DivineItemType"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_order" domainObjectName="Order"
+        <table tableName="tb_user_server" domainObjectName="User"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -123,42 +95,14 @@
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
 
-        <table tableName="dv_order_log" domainObjectName="OrderLog"
+        <table tableName="tb_role" domainObjectName="Role"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
                enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
-        <table tableName="dv_push_log" domainObjectName="PushLog"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_user" domainObjectName="User"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_society" domainObjectName="Society"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_role" domainObjectName="Role"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_permission" domainObjectName="Permission"
+        <table tableName="tb_permission" domainObjectName="Permission"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -172,73 +116,7 @@
                enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
             <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
         </table>
-        <table tableName="dv_user_role" domainObjectName="UserRole"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-
-        <table tableName="dv_user_server" domainObjectName="UserServer"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_profit_bill" domainObjectName="ProfitBill"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_profit_bill_detail" domainObjectName="ProfitBillDetail"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_profit_report" domainObjectName="ProfitReport"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-
-        <table tableName="dv_user_address" domainObjectName="UserAddress"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_order_address" domainObjectName="OrderAddress"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_goods" domainObjectName="Goods"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_config" domainObjectName="Config"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-
-        <table tableName="dv_user_account" domainObjectName="UserAccount"
+        <table tableName="tb_user_role" domainObjectName="UserRole"
                enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableInsert="true"
@@ -247,35 +125,6 @@
         </table>
 
 
-        <table tableName="dv_user_account_log" domainObjectName="UserAccountLog"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-
-        <table tableName="dv_user_account_withdraw" domainObjectName="UserAccountWithdraw"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_distribution" domainObjectName="Distribution"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
-        <table tableName="dv_distribution_level" domainObjectName="DistributionLevel"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableInsert="true"
-               enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true">
-            <generatedKey column="id" sqlStatement="select LAST_INSERT_ID()" identity="true" type="post"/>
-        </table>
 
         <!--
                schema:数据库的schema,可以使用SQL通配符匹配。如果设置了该值，生成SQL的表名会变成如schema.tableName的形式。
